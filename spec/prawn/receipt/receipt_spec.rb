@@ -20,14 +20,10 @@ describe Receipt do
     @receipt.state.must_equal :customer_email => "no@one.com",
                               :amount_billed => "100",
                               :transaction_id => "123"
-
   end
 
   it "render pdf file" do
     @receipt.render_file "receipt_file.pdf"
   end
 
-  it "render receipt with the passed in parameter" do
-    @receipt.render_file "filled_receipt_file.pdf"
-  end
 end
