@@ -31,9 +31,9 @@ module Prawn
         move_down 10
         data = [
                 ["Payment date", state.fetch(:payment_date) {Time.now.strftime "%B %e, %Y "}],
-                ["Account billed", state.fetch(:amount_billed)],
-                ["Account charged",   state.fetch(:amount_charged) {state.fetch(:amount_billed)}],
-                ["Charged to", state.fetch(:customer_email)],
+                ["Account billed", "$#{state.fetch(:amount_billed)} USD"],
+                ["Account charged", "#{state.fetch(:customer_name)}(#{state.fetch(:customer_email)})"],
+                ["Charged to", state.fetch(:credit_card)],
                 ["Transaction ID", state.fetch(:transaction_id)]
                ]
         table data, :row_colors => ["F0F0F0", "FFFFCC"], :width => bounds.width

@@ -6,7 +6,9 @@ include Prawn::Receipt
 describe Receipt do
   before do
     @receipt = Receipt.new :customer_email => "no@one.com",
-                           :amount_billed => "100",
+                           :customer_name => "noone",
+                           :amount_billed => "100.00",
+                           :credit_card => "123-1234-3456",
                            :transaction_id => "123"
   end
 
@@ -18,7 +20,9 @@ describe Receipt do
 
   it "store template var to state" do
     @receipt.state.must_equal :customer_email => "no@one.com",
-                              :amount_billed => "100",
+                              :customer_name => "noone",
+                              :amount_billed => "100.00",
+                              :credit_card => "123-1234-3456",
                               :transaction_id => "123"
   end
 
