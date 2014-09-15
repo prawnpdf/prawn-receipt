@@ -47,7 +47,7 @@ module Prawn
         move_down 20
 
         table data, :row_colors => ["F0F0F0", "FFFFCC"], 
-                    :position => :center, :width => 350
+                    :position => :center, :width => 400
 
 
         move_down 20
