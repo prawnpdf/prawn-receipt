@@ -1,5 +1,5 @@
 module Prawn
-  module Receipt
+  class Receipt
     VERSION = "0.0.1"
   end
 end

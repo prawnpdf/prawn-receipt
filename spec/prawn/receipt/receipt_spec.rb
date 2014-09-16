@@ -2,10 +2,9 @@ require_relative '../../spec_helper'
 
 require_relative '../../../lib/prawn/receipt'
 
-include Prawn::Receipt
-describe Receipt do
+describe Prawn::Receipt do
   before do
-    @receipt = Receipt.new :customer_email => "no@one.com",
+    @receipt = Prawn::Receipt.new :customer_email => "no@one.com",
                            :customer_name => "noone",
                            :amount_billed => "100.00",
                            :credit_card => "123-1234-3456",
@@ -14,7 +13,7 @@ describe Receipt do
 
   it "accept hash options" do
     proc {
-      Receipt.new
+      Prawn::Receipt.new
     }.must_raise ArgumentError
   end
 
