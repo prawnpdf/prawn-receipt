@@ -1,6 +1,6 @@
-require_relative '../../spec_helper'
+require_relative '../spec_helper'
 
-require_relative '../../../lib/prawn/receipt'
+require_relative '../../lib/prawn/receipt'
 
 describe Prawn::Receipt do
   before do
