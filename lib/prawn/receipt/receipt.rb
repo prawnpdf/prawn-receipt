@@ -12,13 +12,13 @@ module Prawn
       end
 
       def build_receipt
-        image "#{Prawn::Receipt::RECEIPTDATADIR}/pr-logo.png", 
+        image "#{Prawn::Receipt::RECEIPTDATADIR}/pr-logo.png",
           :position => :center, :width => 225
 
         move_down 60
 
-        font_size(20) do 
-          text "Receipt for your payment to Practicing Ruby", :align => :center 
+        font_size(20) do
+          text "Receipt for your payment to Practicing Ruby", :align => :center
         end
 
         build_table
@@ -46,12 +46,33 @@ module Prawn
 
         move_down 20
 
-        table data, :row_colors => ["F0F0F0", "FFFFCC"], 
-                    :position => :center, :width => 400
+        table data, :row_colors => ["FFFFFF", "EDEEEE"],
+                    :position => :center,
+                    :width => 400 do |t|
+          apply_common_styling(t, data.length)
+        end
+
 
 
         move_down 20
       end
+
+      private
+      def apply_common_styling(t, size)
+        t.instance_eval do
+          cells.style(:padding => 10)
+
+          column(0).style(:font_style => :bold, :borders => [:left], :width => width*0.4)
+          column(1).style(:borders => [:right], :width => width*0.6)
+
+          row(0).style { |c| c.borders += [:top] }
+
+          row(size - 1).style do |c|
+            c.borders += [:bottom]
+          end
+        end
+      end
+
     end
 
   end
