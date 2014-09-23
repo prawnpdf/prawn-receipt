@@ -17,13 +17,15 @@ module Prawn
     end
 
     def build_receipt
-      image "#{Prawn::Receipt::RECEIPTDATADIR}/pr-logo.png",
+      image state.fetch(:logo_image_path),
         :position => :center, :width => 225
+      #image "#{Prawn::Receipt::RECEIPTDATADIR}/pr-logo.png",
+      #  :position => :center, :width => 225
 
       move_down 60
 
       font_size(20) do
-        text "Receipt for your payment to Practicing Ruby", :align => :center
+        text "Receipt for your payment to #{state.fetch(:company_name)}", :align => :center
       end
 
       build_table
@@ -34,8 +36,8 @@ module Prawn
 
       bounding_box([0,30], :width => 72*7.5, :height => 30) do
 
-        text "Your payment for your Practicing Ruby subscription has been successfully processed.", :align=> :center
-        text "Please keep this receipt for your records. If you have questions, email <color rgb='0000ff'><u>gregory@practicingruby.com</u><color>", :inline_format => true, :align=> :center
+        text "Your payment for your #{state.fetch(:company_name)} subscription has been successfully processed.", :align=> :center
+        text "Please keep this receipt for your records. If you have questions, email <color rgb='0000ff'><u>#{state.fetch(:company_email)}</u><color>", :inline_format => true, :align=> :center
 
       end
     end
