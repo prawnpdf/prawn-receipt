@@ -6,8 +6,8 @@ require 'prawn/receipt/version'
 Gem::Specification.new do |spec|
   spec.name          = "prawn-receipt"
   spec.version       = Prawn::Receipt::VERSION
-  spec.authors       = ["David Ruan"]
-  spec.email         = ["ruanwz@gmail.com"]
+  spec.authors       = ["David Ruan", "Gregory Brown"]
+  spec.email         = ["ruanwz@gmail.com", "gregory.t.brown@gmail.com"]
   spec.summary       = "Prawn Receipt"
   spec.description   = "pdf generator for receipt"
   spec.homepage      = ""
