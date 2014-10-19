@@ -1,4 +1,4 @@
-Copyright (c) 2014 David Ruan
+Copyright (c) 2014 David Ruan, Gregory Brown, and contributors
 
 MIT License
 
