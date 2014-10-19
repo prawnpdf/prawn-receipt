@@ -1,8 +1,8 @@
-require "bundler"
+#require "bundler"
 
-Bundler.require
+#Bundler.require
 
-require_relative '../lib/prawn/receipt'
+require "prawn/receipt" #_relative '../lib/prawn/receipt'
 
 logo_image_path = File.expand_path("../data/pr-logo.png",
                                    File.dirname(__FILE__))
