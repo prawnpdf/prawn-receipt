@@ -16,4 +16,4 @@ receipt = Prawn::Receipt.new :logo_image_path => logo_image_path,
                              :credit_card     => "123-1234-3456",
                              :transaction_id  => "123"
 
-receipt.render_file "receipt_file.pdf"
+receipt.render_file "receipt.pdf"
