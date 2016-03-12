@@ -1,5 +1,10 @@
 # Prawn::Receipt
 
+![No Maintained](https://img.shields.io/badge/maintained-no-red.png)
+
+This is an experiment. You're certainly encouraged to play with it or suggest
+improvements to it but you should not expect any support from the authors.
+
 ## Installation
 
 Add this line to your application's Gemfile:
